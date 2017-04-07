@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(G4HelloWorld)
+project(APPNAME)
 set(CMAKE_CXX_STANDARD 14)
 
 
@@ -18,5 +18,5 @@ configure_file(${PROJECT_SOURCE_DIR}/init.mac
         )
 
 
-add_executable(G4HelloWorld main.cpp ${sources} ${headers})
-target_link_libraries(G4HelloWorld ${Geant4_LIBRARIES})
+add_executable(APPNAME main.cpp ${sources} ${headers})
+target_link_libraries(APPNAME ${Geant4_LIBRARIES})

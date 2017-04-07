@@ -5,8 +5,8 @@
 #include <G4UImanager.hh>
 #include <G4UIExecutive.hh>
 
-#include "include/HWActionInitialization.h"
-#include "include/HWDetectorConstruction.h"
+#include "APPPREFIXActionInitialization.h"
+#include "APPPREFIXDetectorConstruction.h"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
@@ -38,14 +38,14 @@ int main(int argc, char** argv) {
 #endif
 
 
-    HWDetectorConstruction* detectorConstruction = new HWDetectorConstruction();
+    APPPREFIXDetectorConstruction* detectorConstruction = new APPPREFIXDetectorConstruction();
     runManager->SetUserInitialization(detectorConstruction);
 
     G4VModularPhysicsList* physicsList = new QBBC;
     physicsList->SetVerboseLevel(0);
     runManager->SetUserInitialization(physicsList);
 
-    HWActionInitialization* actionInitialization = new HWActionInitialization();
+    APPPREFIXActionInitialization* actionInitialization = new APPPREFIXActionInitialization();
     runManager->SetUserInitialization(actionInitialization);
 
     runManager->Initialize();

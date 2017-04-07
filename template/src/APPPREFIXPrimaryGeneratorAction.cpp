@@ -1,6 +1,6 @@
-#include "HWPrimaryGeneratorAction.h"
+#include "APPPREFIXPrimaryGeneratorAction.h"
 
-HWPrimaryGeneratorAction::HWPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAction(){
+APPPREFIXPrimaryGeneratorAction::APPPREFIXPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAction(){
     G4int n_particle = 1;
     fParticleGun = new G4ParticleGun(n_particle);
 
@@ -16,8 +16,8 @@ HWPrimaryGeneratorAction::HWPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAc
     fParticleGun->SetParticlePosition(position);
 }
 
-HWPrimaryGeneratorAction::~HWPrimaryGeneratorAction() {delete fParticleGun;}
+APPPREFIXPrimaryGeneratorAction::~APPPREFIXPrimaryGeneratorAction() {delete fParticleGun;}
 
-void HWPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent) {
+void APPPREFIXPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent) {
     fParticleGun->GeneratePrimaryVertex(anEvent);
 }
