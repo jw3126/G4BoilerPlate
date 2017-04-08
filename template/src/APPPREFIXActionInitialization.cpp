@@ -3,8 +3,7 @@
 APPPREFIXActionInitialization::APPPREFIXActionInitialization() : G4VUserActionInitialization(){}
 APPPREFIXActionInitialization::~APPPREFIXActionInitialization() {}
 
-void APPPREFIXActionInitialization::Build() const
-{
+void APPPREFIXActionInitialization::Build() const {
 
     APPPREFIXPrimaryGeneratorAction* primaryGeneratorAction = new APPPREFIXPrimaryGeneratorAction();
     SetUserAction(primaryGeneratorAction);
@@ -18,4 +17,9 @@ void APPPREFIXActionInitialization::Build() const
     APPPREFIXRunAction* runAction = new APPPREFIXRunAction();
     SetUserAction(runAction);
 
+}
+
+void APPPREFIXActionInitialization::BuildForMaster() const {
+    APPPREFIXRunAction* runAction = new APPPREFIXRunAction();
+    SetUserAction(runAction);
 }

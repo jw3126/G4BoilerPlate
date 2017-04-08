@@ -12,6 +12,7 @@ public:
     APPPREFIXActionInitialization() ;
     ~APPPREFIXActionInitialization();
     virtual void Build() const;
+    virtual void BuildForMaster() const;
 };
 
 

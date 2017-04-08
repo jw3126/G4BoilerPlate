@@ -4,5 +4,5 @@ APPPREFIXSteppingAction::APPPREFIXSteppingAction(): G4UserSteppingAction(){}
 
 APPPREFIXSteppingAction::~APPPREFIXSteppingAction(){}
 
-void APPPREFIXSteppingAction::UserSteppingAction(const G4Step* step){
+void APPPREFIXSteppingAction::UserSteppingAction(const G4Step* ){
 }
