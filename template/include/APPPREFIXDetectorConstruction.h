@@ -7,8 +7,8 @@
 class APPPREFIXDetectorConstruction: public G4VUserDetectorConstruction {
 
 public:
-    APPPREFIXDetectorConstruction(): G4VUserDetectorConstruction() {};
-    ~APPPREFIXDetectorConstruction(){};
+    APPPREFIXDetectorConstruction();
+    ~APPPREFIXDetectorConstruction();
     virtual G4VPhysicalVolume* Construct();
 };
 

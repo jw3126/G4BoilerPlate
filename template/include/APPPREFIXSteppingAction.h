@@ -12,7 +12,7 @@ class APPPREFIXSteppingAction : public G4UserSteppingAction {
 public:
     APPPREFIXSteppingAction();
     ~APPPREFIXSteppingAction();
-    virtual void UserSteppingAction(const G4Step* step);
+    virtual void UserSteppingAction(const G4Step*);
 };
 
 

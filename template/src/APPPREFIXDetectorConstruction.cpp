@@ -5,6 +5,11 @@
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4PhysicalConstants.hh"
+
+APPPREFIXDetectorConstruction::APPPREFIXDetectorConstruction(): G4VUserDetectorConstruction(){}
+
+APPPREFIXDetectorConstruction::~APPPREFIXDetectorConstruction(){}
 
 G4VPhysicalVolume* APPPREFIXDetectorConstruction::Construct() {
 
@@ -13,7 +18,7 @@ G4VPhysicalVolume* APPPREFIXDetectorConstruction::Construct() {
     G4Material* mediumWorld = nist->FindOrBuildMaterial("G4_AIR");
 
     // logical
-    G4Box* solidWorld = new G4Box("solidWorld", 1*m, 2*m, 3*m);
+    G4Box* solidWorld = new G4Box("solidWorld", 1*m, 2*m, pi*m);
     G4LogicalVolume* logicalWorld = new G4LogicalVolume(solidWorld, mediumWorld, "logicalWorld");
 
     // physical
@@ -35,25 +40,6 @@ G4VPhysicalVolume* APPPREFIXDetectorConstruction::Construct() {
                               pMany,
                               pCopyNo,
                               pSurfChk);
-
-    // phantom
-    G4Material* mediumPhantom = nist->FindOrBuildMaterial("G4_WATER");
-
-    G4Box* solidPhantom = new G4Box("solidPhantom", 0.5*m, 1*m, 1.5*m);
-    G4LogicalVolume* logicalPhantom = new G4LogicalVolume(solidPhantom, mediumPhantom, "logicalPhantom");
-
-    pCurrentLogical = logicalPhantom;
-    pMotherLogical = logicalWorld;
-
-    new G4PVPlacement(pRot,
-                      tlate,
-                      pCurrentLogical,
-                      "physicalPhantom",
-                      pMotherLogical,
-                      pMany,
-                      pCopyNo,
-                      pSurfChk);
-
 
     return physicalWorld;
 }

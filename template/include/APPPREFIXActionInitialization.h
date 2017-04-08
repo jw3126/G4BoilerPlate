@@ -10,7 +10,7 @@ class APPPREFIXActionInitialization: public G4VUserActionInitialization {
 
 public:
     APPPREFIXActionInitialization() ;
-    virtual ~APPPREFIXActionInitialization();
+    ~APPPREFIXActionInitialization();
     virtual void Build() const;
 };
 
