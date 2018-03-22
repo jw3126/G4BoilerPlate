@@ -54,5 +54,6 @@ class G4Builder:
         run(["git", "commit", "-am", "boilerplate"])
 
 if __name__ == "__main__":
-    builder = G4Builder(target_dir=join(homedir(), "Documents", "G4", "G4TPR2010"), target_prefix="")
+    appname = "TrackInfoExample"
+    builder = G4Builder(target_dir=join(homedir(), "Documents", "G4", appname), target_prefix="")
     builder.run()

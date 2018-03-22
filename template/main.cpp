@@ -8,10 +8,12 @@
 #include "APPPREFIXActionInitialization.h"
 #include "APPPREFIXDetectorConstruction.h"
 
+
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
 #else
 #include "G4RunManager.hh"
+
 #endif
 
 void visualize(int argc, char** argv) {
