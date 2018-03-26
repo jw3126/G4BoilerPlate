@@ -26,9 +26,10 @@ def homedir():
 
 
 class G4Builder:
-    def __init__(self, target_dir, target_prefix="", target_name=None):
+    def __init__(self, target_dir, target_prefix="", target_name=None, template="template_basic"):
         __dir__ = split(abspath(__file__))[0]
-        self.template = join(__dir__, "template")
+        self.template = join(__dir__, template)
+        assert os.path.exists(self.template)
         self.files = listfiles(self.template) + listfiles(self.template, "src") + listfiles(self.template, "include")
         self.appname = "APPNAME"
         self.appprefix = "APPPREFIX"
@@ -54,6 +55,6 @@ class G4Builder:
         run(["git", "commit", "-am", "boilerplate"])
 
 if __name__ == "__main__":
-    appname = "TrackInfoExample"
-    builder = G4Builder(target_dir=join(homedir(), "Documents", "G4", appname), target_prefix="")
+    appname = "YetAnotherApp"
+    builder = G4Builder(target_dir=join(homedir(), "Documents", "G4", appname), target_prefix="", template="template_extended")
     builder.run()
